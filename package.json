@@ -1,0 +1,32 @@
+{
+  "name": "playground-test-auto-release",
+  "version": "1.0.0",
+  "description": "Playground repo for testing automatic github releases",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "build": "grunt build",
+    "compress": "grunt compress",
+    "checksum": "grunt checksum",
+    "release": "grunt release",
+    "dev": "./node_modules/.bin/nodemon -w index.js",
+    "clean": "rm -rf ./build && rm -rf ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mStirner/playground-test-auto-release.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mStirner/playground-test-auto-release/issues"
+  },
+  "homepage": "https://github.com/mStirner/playground-test-auto-release#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "grunt": "^1.6.1",
+    "grunt-contrib-uglify": "^5.2.2"
+  }
+}

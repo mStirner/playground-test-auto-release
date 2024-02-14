@@ -24,11 +24,9 @@ jobs:
       - run: |
           echo 'PACKAGE_JSON<<EOF' >> $GITHUB_ENV
           cat ./package.json >> $GITHUB_ENV
-          echo 'EOF' >> $GITHUB_ENV      
-
+          echo 'EOF' >> $GITHUB_ENV   
+          
       - uses: ncipollo/release-action@v1        
         with:
           artifacts: "dist/*"
-          skipIfReleaseExists: true
-          generateReleaseNotes: true
           tag: "v${{ fromJson(env.PACKAGE_JSON).version }}"

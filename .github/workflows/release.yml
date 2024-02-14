@@ -21,6 +21,12 @@ jobs:
       - run: npm ci
       - run: npm run release
 
-      - uses: ncipollo/release-action@v1
+      - run: |
+          echo 'PACKAGE_JSON<<EOF' >> $GITHUB_ENV
+          cat ./package.json >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV      
+
+      - uses: ncipollo/release-action@v1        
         with:
           artifacts: "dist/*"
+          tag: "v${{ fromJson(env.PACKAGE_JSON).version }}"

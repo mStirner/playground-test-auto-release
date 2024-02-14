@@ -21,8 +21,7 @@ jobs:
       - run: npm ci
       - run: npm run release
 
-      - name: "Read package.json"
-        run: |
+      - run: |
           echo 'PACKAGE_JSON<<EOF' >> $GITHUB_ENV
           cat ./package.json >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV      

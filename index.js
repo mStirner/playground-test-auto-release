@@ -23,6 +23,7 @@ app.all("*", (req, res) => {
 });
 
 // Testing git commits: "`fix` commit added"
+// https://github.com/mStirner/playground-test-auto-release/issues/22
 
 app.listen(Number(HTTP_PORT), HTTP_HOST, (err) => {
     console.log(err || `HTTP Server listening on http://${HTTP_HOST}:${HTTP_PORT}`);

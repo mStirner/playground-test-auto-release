@@ -27,6 +27,7 @@ app.all("*", (req, res) => {
 // foo
 // bar
 // test commit: `fix`: foo
+// test commit: [fix]: foo
 
 app.listen(Number(HTTP_PORT), HTTP_HOST, (err) => {
     console.log(err || `HTTP Server listening on http://${HTTP_HOST}:${HTTP_PORT}`);

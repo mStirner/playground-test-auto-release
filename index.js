@@ -22,14 +22,6 @@ app.all("*", (req, res) => {
 
 });
 
-// this line was added to test github actions
-// TODO: lorem ipsum
-// foo
-// bar
-// test commit: `fix`: foo
-// test commit: [fix]: foo
-// another test commit `fix`: foo
-// another test commit [fix]: foo
 
 app.listen(Number(HTTP_PORT), HTTP_HOST, (err) => {
     console.log(err || `HTTP Server listening on http://${HTTP_HOST}:${HTTP_PORT}`);

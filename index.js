@@ -17,7 +17,8 @@ app.all("*", (req, res) => {
         headers: req.headers,
         url: req.url,
         ip: req.ip,
-        body: req.body
+        body: req.body,
+        method: req.method
     });
 
 });

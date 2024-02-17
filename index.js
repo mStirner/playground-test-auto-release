@@ -17,7 +17,8 @@ app.all("*", (req, res) => {
         headers: req.headers,
         url: req.url,
         ip: req.ip,
-        body: req.body
+        body: req.body,
+        method: req.method
     });
 
 });
@@ -28,6 +29,8 @@ app.all("*", (req, res) => {
 // test commit #1
 // test commit #2
 // test commit #3
+// TODO: Test commit
+// fix #22 again
 
 app.listen(Number(HTTP_PORT), HTTP_HOST, (err) => {
     console.log(err || `HTTP Server listening on http://${HTTP_HOST}:${HTTP_PORT}`);

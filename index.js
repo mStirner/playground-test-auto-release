@@ -22,14 +22,12 @@ app.all("*", (req, res) => {
 
 });
 
-// this line was added to test github actions
-// TODO: lorem ipsum
-// foo
-// bar
-// test commit: `fix`: foo
-// test commit: [fix]: foo
-// another test commit `fix`: foo
-// another test commit [fix]: foo
+// Testing git commits: "`fix` commit added"
+// https://github.com/mStirner/playground-test-auto-release/issues/22
+// test "feature" category for github release notes
+// test commit #1
+// test commit #2
+// test commit #3
 
 app.listen(Number(HTTP_PORT), HTTP_HOST, (err) => {
     console.log(err || `HTTP Server listening on http://${HTTP_HOST}:${HTTP_PORT}`);

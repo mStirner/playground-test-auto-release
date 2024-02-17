@@ -32,6 +32,20 @@ jobs:
         uses: mikepenz/release-changelog-builder-action@v4
         with:
           commitMode: true
+          configurationJson: |
+            {
+              "categories": [
+                {
+                  "title": "## What's Changed since #{{FROM_TAG}}",
+                  "labels": []
+                }
+              ],
+              "template": "#{{CHANGELOG}}",
+              "pr_template": "- #{{TITLE}}\n",
+              "empty_template": "#{{OWNER}}\n#{{REPO}}\n#{{FROM_TAG}}\n#{{TO_TAG}}",
+              "max_pull_requests": 1000,
+              "max_back_track_time_days": 1000
+            }          
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

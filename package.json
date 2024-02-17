@@ -1,6 +1,6 @@
 {
   "name": "playground-test-auto-release",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "Playground repo for testing automatic github releases",
   "main": "index.js",
   "scripts": {

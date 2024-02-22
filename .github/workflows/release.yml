@@ -50,10 +50,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Get Branch Name
+      - name: Set/get branch name
         run: |
-          branch_name=${GITHUB_REF#refs/heads/}
-          echo "Branch Name: $branch_name"          
+            # Extrahiere den Branch-Namen aus dem GITHUB_REF
+            export BRANCH_NAME=${GITHUB_REF#refs/heads/}
+            echo "Branch Name: $BRANCH_NAME"
+            echo "Pre releaes: $BRANCH_NAME === 'dev'" 
 
       - name: "Create GitHub release"    
         uses: ncipollo/release-action@v1        
@@ -61,6 +63,7 @@ jobs:
           artifacts: "dist/*"
           tag: "v${{ fromJson(env.PACKAGE_JSON).version }}"
           generateReleaseNotes: false
-          skipIfReleaseExists: true
+          #skipIfReleaseExists: true
+          allowUpdates: true
           body: ${{steps.build_changelog.outputs.changelog}}
-          #prerelease: ${{GITHUB_REF#refs/heads/}} === "dev"
+          prerelease: $BRANCH_NAME === "dev"

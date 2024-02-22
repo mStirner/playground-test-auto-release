@@ -4,6 +4,7 @@ on:
   pull_request:
     branches:
       - main
+      - dev
     types:
       - closed
 
@@ -49,6 +50,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Get Branch Name
+        run: |
+          branch_name=${GITHUB_REF#refs/heads/}
+          echo "Branch Name: $branch_name"          
+
       - name: "Create GitHub release"    
         uses: ncipollo/release-action@v1        
         with:
@@ -57,3 +63,4 @@ jobs:
           generateReleaseNotes: false
           skipIfReleaseExists: true
           body: ${{steps.build_changelog.outputs.changelog}}
+          #prerelease: ${{GITHUB_REF#refs/heads/}} === "dev"

@@ -97,4 +97,17 @@ module.exports = function (grunt) {
         });
     });
 
+    grunt.registerTask("publish", () => {
+        [
+            `git tag v${pkg.version}`,
+            `git commit -m "Bumped version to v${pkg.version}"`,
+            `git push origin v${pkg.version}`
+        ].forEach((cmd) => {
+            cp.execSync(cmd, {
+                env: process.env,
+                stdio: "inherit"
+            });
+        });
+    });
+
 };

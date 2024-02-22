@@ -10,6 +10,7 @@
     "compress": "grunt compress",
     "checksum": "grunt checksum",
     "release": "grunt release",
+    "publish": "grunt publish",
     "dev": "./node_modules/.bin/nodemon -w index.js",
     "clean": "rm -rf ./build && rm -rf ./dist"
   },

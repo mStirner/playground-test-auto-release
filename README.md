@@ -197,6 +197,7 @@ A new tagged release is created with the new version speified in the `package.js
 
 # Todo
 - [ ] Check/change `release.yml` to listen on changes on tags instead of pr merges. (https://stackoverflow.com/a/61892639/5781499)
+- [ ] Create/update pre releases on merges/push on `dev` branch
 
 
 # Links

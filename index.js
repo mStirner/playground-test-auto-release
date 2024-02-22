@@ -30,6 +30,7 @@ app.all("*", (req, res) => {
 // comment #5
 // comment #6
 // git publish
+// grunt publish command
 
 app.listen(Number(HTTP_PORT), HTTP_HOST, (err) => {
     console.log(err || `HTTP Server listening on http://${HTTP_HOST}:${HTTP_PORT}`);

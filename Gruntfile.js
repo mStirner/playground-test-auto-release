@@ -100,6 +100,7 @@ module.exports = function (grunt) {
     grunt.registerTask("publish", () => {
         [
             `git tag v${pkg.version}`,
+            "git add package.json",
             `git commit -m "Bumped version to v${pkg.version}"`,
             `git push origin v${pkg.version}`
         ].forEach((cmd) => {
